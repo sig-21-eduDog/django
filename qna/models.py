@@ -1,4 +1,6 @@
 from django.db import models
+# Used to generate URLs by reversing the URL patterns
+from django.urls import reverse
 
 # Create your models here.
 class Data(models.Model):
@@ -14,3 +16,9 @@ class Data(models.Model):
         managed = False
         db_table = 'data'
 
+    def __str__(self):
+        return self.title
+
+    def get_absolute_url(self):
+        """Returns the url to access a particular instance of the model."""
+        return reverse('model-detail-view', args=[str(self.id)])
