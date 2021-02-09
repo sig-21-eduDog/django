@@ -20,11 +20,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fa985d6f-ed84-4caa-9823-a48c24bf6835" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/qna/algorithm/Documents.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qna/algorithm/Keywords.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qna/algorithm/Main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qna/algorithm/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qna/algorithm/Documents.py" beforeDir="false" afterPath="$PROJECT_DIR$/qna/algorithm/documents.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qna/algorithm/Keywords.py" beforeDir="false" afterPath="$PROJECT_DIR$/qna/algorithm/keywords.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qna/algorithm/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/qna/algorithm/subjects.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qna/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/qna/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qna/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/qna/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qna/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/qna/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,6 +63,34 @@
       <recent name="C:\Users\magic\my_project\django\qna" />
     </key>
   </component>
+  <component name="RunManager">
+    <configuration name="models" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="django" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/qna" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/qna/models.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.models" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
@@ -89,15 +119,5 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="832" y="251" key="FileChooserDialogImpl" timestamp="1612113810972">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="832" y="251" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1612113810972" />
-    <state x="343" y="226" key="SettingsEditor" timestamp="1612102501668">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="343" y="226" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1612102501668" />
   </component>
 </project>

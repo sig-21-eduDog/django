@@ -1,8 +1,9 @@
 from django.db import models
 # Used to generate URLs by reversing the URL patterns
 from django.urls import reverse
+from qna.algorithm.documents import search
 
-# Create your models here.
+
 class Data(models.Model):
     id = models.AutoField(db_column='ID', primary_key=True)  # Field name made lowercase.
     source = models.CharField(db_column='SOURCE', max_length=100)  # Field name made lowercase.
