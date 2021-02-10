@@ -6,6 +6,7 @@ from django.utils.translation import ugettext_lazy
 class QuestionForm(forms.Form):
     question = forms.CharField(label='', widget=forms.TextInput(attrs={'placeholder': '질문을 입력해주세요.', 'class': 'form-control'}))
 
+    # input(질문)을 반환
     def clean_questionform(self):
         data = self.cleaned_data['question']
         if data == '':

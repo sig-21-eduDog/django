@@ -6,24 +6,27 @@ from .models import Data
 from qna.algorithm.subjects import getSubject
 from qna.algorithm.documents import search
 
+
 def index(request):
     """View function for home page of site."""
-    # post 요청이면 form 데이터 처리
+
     if request.method == 'POST':
         question_form = QuestionForm(request.POST)
         if question_form.is_valid():
-            # 질문이 올바른값이면 여기서 작업처리
-            # 지금은 그냥 예시로 질문=Data의 title인 항목 가져옴
             try:
                 topic = question_form.clean_questionform()
                 try:
+                    # Data 테이블에 topic이 있을 때
                     content = get_object_or_404(Data, title=topic)
                 except Data.MultipleObjectsReturned:
+                    # 여러 개의 본문이 나오면 가장 적합한 본문 하나 선택
                     content = get_object_or_404(Data, main=search(topic))
             except:
                 try:
+                    # Data 테이블에 topic이 없을 때
                     content = get_object_or_404(Data, title=getSubject(topic))
                 except Data.MultipleObjectsReturned:
+                    # 여러 개의 본문이 나오면 가장 적합한 본문 하나 선택
                     content = get_object_or_404(Data, main=search(getSubject(topic)))
 
 

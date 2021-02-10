@@ -1,3 +1,4 @@
+# 주체 찾기
 def getSubject(str):
     import re
 
