@@ -39,16 +39,16 @@ def selectMainFromData():
 def getContent(docs):
     contentslist = []
 
-    for i in range(len(docs)):
-        contentslist.append(list(docs[i])[1])
+    for doc in docs:
+        contentslist.append(list(doc)[1])
 
     return contentslist
 
 def getTopicContent(docs):
     topicPlusContent = []
 
-    for i in range(len(docs)):
-        topicPlusContent.append(list(docs[i])[0] + ' ' + list(docs[i])[1])
+    for doc in docs:
+        topicPlusContent.append(list(doc)[0] + ' ' + list(doc)[1])
 
     return topicPlusContent
 
@@ -58,7 +58,7 @@ def getNouns(query):
 
 # 문서 검색 알고리즘
 def search(query):
-    contentslist, topicPlusContent = getTopicContent(selectMainFromData())
+    topicPlusContent = getTopicContent(selectMainFromData())
     tokenized_corpus = [tokenize(doc) for doc in topicPlusContent]
     bm25 = BM25Okapi(tokenized_corpus)
     tokenized_query = getNouns(query)
