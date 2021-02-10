@@ -39,8 +39,8 @@ def selectMainFromData():
 def getTopicContent(docs):
     topicPlusContent = []
 
-    for i in range(len(docs)):
-        topicPlusContent.append(list(docs[i])[0] + ' ' + list(docs[i])[1])
+    for doc in docs:
+        topicPlusContent.append(list(doc)[0] + ' ' + list(doc)[1])
 
     return topicPlusContent
 
