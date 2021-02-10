@@ -4,7 +4,7 @@ from django.shortcuts import get_object_or_404
 from .forms import QuestionForm
 from .models import Data
 from qna.algorithm.subjects import getSubject
-
+from qna.algorithm.documents import search
 
 def index(request):
     """View function for home page of site."""
@@ -16,10 +16,17 @@ def index(request):
             # 지금은 그냥 예시로 질문=Data의 title인 항목 가져옴
             try:
                 topic = question_form.clean_questionform()
-                content = get_object_or_404(Data, title=topic)
+                try:
+                    content = get_object_or_404(Data, title=topic)
+                except Data.MultipleObjectsReturned:
+                    content = get_object_or_404(Data, main=search(topic))
             except:
-                content = get_object_or_404(Data, title=getSubject(topic))
-                
+                try:
+                    content = get_object_or_404(Data, title=getSubject(topic))
+                except Data.MultipleObjectsReturned:
+                    content = get_object_or_404(Data, main=search(getSubject(topic)))
+
+
             # Render the HTML template index.html with the data in the context variable
             context = {
                 'content': content,

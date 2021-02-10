@@ -15,21 +15,29 @@ def tokenizer(sent):
 
 
 def selectMainFromData():
-    conn = pymysql.connect(host='localhost', user='RLJG_MANAGER', password='q1W2e3R4', db='Data')
+    conn = pymysql.connect(host='localhost', user='RLJG_MANAGER', password='q1W2e3R4', db='rljg_schema')
     SQL = 'SELECT MAIN FROM DATA'
-    curs = conn.cusor()
+    curs = conn.cursor()
     curs.execute(SQL)
     data = curs.fetchall()
+    data = list(data)
     curs.close()
     conn.close()
     return data
 
 
-# excel_data = pd.read_excel('naver_it2.xlsx', engine ='openpyxl')
+def makelist(data):
+    contentslist = []
+    for i in range(len(data)):
+        contentslist.append(list(data[i])[0])
+
+    print(type(contentslist[10000]), contentslist[10000])
+    return contentslist
+
+
 def search(query):
-    corpus = selectMainFromData()
+    corpus = makelist(selectMainFromData())
     tokenized_corpus = [tokenizer(doc) for doc in corpus]
     bm25 = BM25Okapi(tokenized_corpus)
     tokenized_query = tokenizer(query)
-    # doc_scores = bm25.get_scores(tokenized_query)
-    return bm25.get_top_n(tokenized_query, corpus, n=1)
+    return bm25.get_top_n(tokenized_query, corpus, n=1)[0]
