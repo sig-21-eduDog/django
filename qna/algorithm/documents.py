@@ -10,8 +10,7 @@ from rank_bm25 import BM25Okapi
 from tqdm import tqdm
 import pandas as pd
 from rank_bm25 import BM25Okapi
-from eunjeon import Mecab  # KoNLPy style mecab wrapper
-
+from eunjeon import Mecab  # KoNLz style mecab wrapper
 
 
 # 형태소 분석기 로드
@@ -38,7 +37,6 @@ def selectMainFromData():
 
 def getTopicContent(docs):
     topicPlusContent = []
-
     for doc in docs:
         topicPlusContent.append(list(doc)[0] + ' ' + list(doc)[1])
 
@@ -48,10 +46,19 @@ def getNouns(query):
     tagger = getTagger()
     return tagger.nouns(query)
 
+def getTokenizedCorpus(docs):
+    res = []
+    for doc in docs:
+        res.append(tokenize(doc))
+
+    return res
+
 # 문서 검색 알고리즘
 def search(query):
     topicPlusContent = getTopicContent(selectMainFromData())
-    tokenized_corpus = [tokenize(doc) for doc in topicPlusContent]
-    bm25 = BM25Okapi(tokenized_corpus)
+    tokenized_corpus = getTokenizedCorpus(topicPlusContent)
     tokenized_query = getNouns(query)
+
+    bm25 = BM25Okapi(tokenized_corpus)
+
     return bm25.get_top_n(tokenized_query, topicPlusContent, n=1)[0]
