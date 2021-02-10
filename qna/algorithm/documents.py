@@ -18,7 +18,7 @@ def tokenizer(sent):
 # db에서 본문만 들고오기
 def selectMainFromData():
     conn = pymysql.connect(host='localhost', user='RLJG_MANAGER', password='q1W2e3R4', db='rljg_schema')
-    SQL = 'SELECT MAIN FROM DATA'
+    SQL = 'SELECT TITLE, MAIN FROM DATA'
     curs = conn.cursor()
     curs.execute(SQL)
     data = curs.fetchall()
@@ -32,16 +32,19 @@ def selectMainFromData():
 # selectMainFromData()의 반환값이 tuple의 list이므로, tuple을 또 list로 바꾸어 0번째 항목(main)을 별개의 list에 저장
 def makelist(data):
     contentslist = []
+    topicPlusContent = []
     for i in range(len(data)):
-        contentslist.append(list(data[i])[0])
-
-    return contentslist
+        # 문서 내용 저장
+        contentslist.append(list(data[i])[1])
+        # 본문에 주제가 없는 경우가 많아서 임의로 추가해 줌
+        topicPlusContent.append(list(data[i])[0] + ' ' + list(data[i])[1])
+    return contentslist, topicPlusContent
 
 
 # 문서 검색 알고리즘
 def search(query):
-    corpus = makelist(selectMainFromData())
-    tokenized_corpus = [tokenizer(doc) for doc in corpus]
+    contentslist, topicPlusContent = makelist(selectMainFromData())
+    tokenized_corpus = [tokenizer(doc) for doc in topicPlusContent]
     bm25 = BM25Okapi(tokenized_corpus)
     tokenized_query = tokenizer(query)
-    return bm25.get_top_n(tokenized_query, corpus, n=1)[0]
+    return bm25.get_top_n(tokenized_query, contentslist, n=1)[0]
