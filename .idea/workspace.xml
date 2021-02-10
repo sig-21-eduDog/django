@@ -20,6 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fa985d6f-ed84-4caa-9823-a48c24bf6835" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/jupyterNotebook/KorQuAD  사용하기.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jupyterNotebook/Untitled.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jupyterNotebook/KorQuAD  사용하기.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/jupyterNotebook/KorQuAD  사용하기.ipynb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
