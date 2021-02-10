@@ -36,14 +36,6 @@ def selectMainFromData():
     conn.close()
     return data
 
-def getContent(docs):
-    contentslist = []
-
-    for i in range(len(docs)):
-        contentslist.append(list(docs[i])[1])
-
-    return contentslist
-
 def getTopicContent(docs):
     topicPlusContent = []
 
