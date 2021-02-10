@@ -39,16 +39,16 @@ def selectMainFromData():
 def getContent(docs):
     contentslist = []
 
-    for doc in docs:
-        contentslist.append(list(doc)[1])
+    for i in range(len(docs)):
+        contentslist.append(list(docs[i])[1])
 
     return contentslist
 
 def getTopicContent(docs):
     topicPlusContent = []
 
-    for doc in docs:
-        topicPlusContent.append(list(doc)[0] + ' ' + list(doc)[1])
+    for i in range(len(docs)):
+        topicPlusContent.append(list(docs[i])[0] + ' ' + list(docs[i])[1])
 
     return topicPlusContent
 
@@ -62,4 +62,4 @@ def search(query):
     tokenized_corpus = [tokenize(doc) for doc in topicPlusContent]
     bm25 = BM25Okapi(tokenized_corpus)
     tokenized_query = getNouns(query)
-    return bm25.get_top_n(tokenized_query, contentslist, n=1)[0]
+    return bm25.get_top_n(tokenized_query, topicPlusContent, n=1)[0]
