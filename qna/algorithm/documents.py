@@ -7,13 +7,20 @@ from numpy import dot
 from numpy.linalg import norm
 import numpy as np
 from rank_bm25 import BM25Okapi
-import pymysql
+from tqdm import tqdm
+import pandas as pd
+from rank_bm25 import BM25Okapi
+from eunjeon import Mecab  # KoNLPy style mecab wrapper
+
 
 
 # 공백 기준으로 자르기
-def tokenizer(sent):
-    return sent.split(" ")
+def getTagger():
+    return Mecab()
 
+def tokenize(sent):
+    tagger = getTagger()
+    return tagger.morphs(sent)
 
 # db에서 본문만 들고오기
 def selectMainFromData():
@@ -40,11 +47,14 @@ def makelist(data):
         topicPlusContent.append(list(data[i])[0] + ' ' + list(data[i])[1])
     return contentslist, topicPlusContent
 
+def getNouns(query):
+    tagger = getTagger()
+    return tagger.nouns(query)
 
 # 문서 검색 알고리즘
 def search(query):
     contentslist, topicPlusContent = makelist(selectMainFromData())
-    tokenized_corpus = [tokenizer(doc) for doc in topicPlusContent]
+    tokenized_corpus = [tokenize(doc) for doc in topicPlusContent]
     bm25 = BM25Okapi(tokenized_corpus)
-    tokenized_query = tokenizer(query)
+    tokenized_query = getNouns(query)
     return bm25.get_top_n(tokenized_query, contentslist, n=1)[0]
