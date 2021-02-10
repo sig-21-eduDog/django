@@ -14,10 +14,11 @@ from eunjeon import Mecab  # KoNLPy style mecab wrapper
 
 
 
-# 공백 기준으로 자르기
+# 형태소 분석기 로드
 def getTagger():
     return Mecab()
 
+# 형태소 분석기를 이용하여 문장 토큰화
 def tokenize(sent):
     tagger = getTagger()
     return tagger.morphs(sent)
@@ -35,17 +36,21 @@ def selectMainFromData():
     conn.close()
     return data
 
-
-# selectMainFromData()의 반환값이 tuple의 list이므로, tuple을 또 list로 바꾸어 0번째 항목(main)을 별개의 list에 저장
-def makelist(data):
+def getContent(docs):
     contentslist = []
+
+    for i in range(len(docs)):
+        contentslist.append(list(docs[i])[1])
+
+    return contentslist
+
+def getTopicContent(docs):
     topicPlusContent = []
-    for i in range(len(data)):
-        # 문서 내용 저장
-        contentslist.append(list(data[i])[1])
-        # 본문에 주제가 없는 경우가 많아서 임의로 추가해 줌
-        topicPlusContent.append(list(data[i])[0] + ' ' + list(data[i])[1])
-    return contentslist, topicPlusContent
+
+    for i in range(len(docs)):
+        topicPlusContent.append(list(docs[i])[0] + ' ' + list(docs[i])[1])
+
+    return topicPlusContent
 
 def getNouns(query):
     tagger = getTagger()
@@ -53,7 +58,7 @@ def getNouns(query):
 
 # 문서 검색 알고리즘
 def search(query):
-    contentslist, topicPlusContent = makelist(selectMainFromData())
+    contentslist, topicPlusContent = getTopicContent(selectMainFromData())
     tokenized_corpus = [tokenize(doc) for doc in topicPlusContent]
     bm25 = BM25Okapi(tokenized_corpus)
     tokenized_query = getNouns(query)
