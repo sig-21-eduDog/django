@@ -1,10 +1,10 @@
 from django.shortcuts import render
-from django.http import HttpResponseRedirect
 from django.shortcuts import get_object_or_404
 from .forms import QuestionForm
 from .models import Data
 from qna.algorithm.subjects import getSubject
 from qna.algorithm.documents import search
+from usingKorQuAD import predict_letter
 
 
 def index(request):
@@ -34,6 +34,7 @@ def index(request):
             context = {
                 'content': content,
                 'form': question_form,
+                'answer': predict_letter(topic, content.main),
             }
 
             return render(request, 'index.html', context=context)

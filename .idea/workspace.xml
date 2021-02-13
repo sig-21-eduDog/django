@@ -20,12 +20,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fa985d6f-ed84-4caa-9823-a48c24bf6835" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/django.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/django.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/usingKorQuAD.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jupyterNotebook/usingKorQuAD.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/jupyterNotebook/usingKorQuAD.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jupyterNotebook/usingKorQuAD.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyterNotebook/usingKorQuAD.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jupyterNotebook/bert/bert_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/bert/bert_config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jupyterNotebook/bert/bert_model.ckpt.index" beforeDir="false" afterPath="$PROJECT_DIR$/bert/bert_model.ckpt.index" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jupyterNotebook/bert/bert_model.ckpt.meta" beforeDir="false" afterPath="$PROJECT_DIR$/bert/bert_model.ckpt.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jupyterNotebook/bert/multi_cased_L-12_H-768_A-12/bert_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/bert/multi_cased_L-12_H-768_A-12/bert_config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jupyterNotebook/bert/multi_cased_L-12_H-768_A-12/bert_model.ckpt.index" beforeDir="false" afterPath="$PROJECT_DIR$/bert/multi_cased_L-12_H-768_A-12/bert_model.ckpt.index" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jupyterNotebook/bert/multi_cased_L-12_H-768_A-12/bert_model.ckpt.meta" beforeDir="false" afterPath="$PROJECT_DIR$/bert/multi_cased_L-12_H-768_A-12/bert_model.ckpt.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jupyterNotebook/bert/multi_cased_L-12_H-768_A-12/vocab.txt" beforeDir="false" afterPath="$PROJECT_DIR$/bert/multi_cased_L-12_H-768_A-12/vocab.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jupyterNotebook/bert/vocab.txt" beforeDir="false" afterPath="$PROJECT_DIR$/bert/vocab.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jupyterNotebook/usingKorQuAD.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jupyterNotebook/usingKorQuAD.py" beforeDir="false" afterPath="$PROJECT_DIR$/usingKorQuAD.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jupyterNotebook/문서 검색.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/문서 검색.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/qna/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/qna/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qna/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/qna/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,6 +70,10 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\magic\my_project\django\qna" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\pgm\Python\RLyoJulGae" />
+      <recent name="C:\pgm\Python\RLyoJulGae\jupyterNotebook" />
     </key>
   </component>
   <component name="RunManager" selected="Python.asdfasdf">

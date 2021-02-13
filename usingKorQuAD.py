@@ -14,47 +14,6 @@
 #     name: rljg
 # ---
 
-# 코드 출처
-# https://github.com/kimwoonggon/publicservant_AI/blob/master/05_%EC%BC%80%EB%9D%BC%EC%8A%A4%EB%A1%9C_KorQuAD(%ED%95%9C%EA%B5%AD%EC%96%B4_Q%26A)_%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0.ipynb
-
-# !pip install wget
-
-# + colab={"base_uri": "https://localhost:8080/", "height": 210} id="SwK1tYV_uayz" outputId="d91212f4-510b-4345-ec54-a9f029cea175"
-# !wget https://storage.googleapis.com/bert_models/2018_11_23/multi_cased_L-12_H-768_A-12.zip
-# -
-
-# !pip list
-
-# + id="Sx2147Ndq3lS"
-import os
-if "bert" not in os.listdir():
-  os.makedirs("bert")
-else:
-  pass
-
-import zipfile
-import shutil
-         
-bert_zip = zipfile.ZipFile('multi_cased_L-12_H-768_A-12.zip')
-bert_zip.extractall('bert')
- 
-bert_zip.close()
-
-
-# + id="3yaskz4Aujj1"
-def copytree(src, dst, symlinks=False, ignore=None):
-    for item in os.listdir(src):
-        s = os.path.join(src, item)
-        d = os.path.join(dst, item)
-        if os.path.isdir(s):
-            shutil.copytree(s, d, symlinks, ignore)
-        else:
-            shutil.copy2(s, d)
-
-copytree("bert/multi_cased_L-12_H-768_A-12", "bert")
-
-# + colab={"base_uri": "https://localhost:8080/", "height": 122} id="zXWE_XTqmta6" outputId="04d88eb1-22b8-4127-babc-afad9b1bdbc0"
-os.listdir()
 
 # + colab={"base_uri": "https://localhost:8080/", "height": 81} id="Ffa---Ov8WfF" outputId="6e28b257-6558-4eec-8015-7bd1b398fb8b"
 import tensorflow as tf
@@ -153,7 +112,7 @@ BATCH_SIZE = 3
 EPOCHS=1
 LR=3e-5
 
-pretrained_path ="bert"
+pretrained_path = "bert"
 config_path = os.path.join(pretrained_path, 'bert_config.json')
 checkpoint_path = os.path.join(pretrained_path, 'bert_model.ckpt')
 vocab_path = os.path.join(pretrained_path, 'vocab.txt')
