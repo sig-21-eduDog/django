@@ -32,6 +32,10 @@
       <div class="well">
         <p class="h2" style="margin-bottom:2rem">{{ content.title }}</p>
         <div class="lead" id="content">{{ content.main }}</div>
+        <script type="text/javascript">
+          a = document.getElementsByClassName("lead")
+          a[0].innerHTML = a[0].innerHTML.replace("{{ content.title }}","<mark style=background-color: yellow;>"+"{{ content.title }}"+"</mark>")
+        </script>
       </div>
     </div>
     {% endif %}
