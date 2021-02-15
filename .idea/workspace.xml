@@ -20,22 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fa985d6f-ed84-4caa-9823-a48c24bf6835" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/usingKorQuAD.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jupyterNotebook/bert/bert_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/bert/bert_config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jupyterNotebook/bert/bert_model.ckpt.index" beforeDir="false" afterPath="$PROJECT_DIR$/bert/bert_model.ckpt.index" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jupyterNotebook/bert/bert_model.ckpt.meta" beforeDir="false" afterPath="$PROJECT_DIR$/bert/bert_model.ckpt.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jupyterNotebook/bert/multi_cased_L-12_H-768_A-12/bert_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/bert/multi_cased_L-12_H-768_A-12/bert_config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jupyterNotebook/bert/multi_cased_L-12_H-768_A-12/bert_model.ckpt.index" beforeDir="false" afterPath="$PROJECT_DIR$/bert/multi_cased_L-12_H-768_A-12/bert_model.ckpt.index" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jupyterNotebook/bert/multi_cased_L-12_H-768_A-12/bert_model.ckpt.meta" beforeDir="false" afterPath="$PROJECT_DIR$/bert/multi_cased_L-12_H-768_A-12/bert_model.ckpt.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jupyterNotebook/bert/multi_cased_L-12_H-768_A-12/vocab.txt" beforeDir="false" afterPath="$PROJECT_DIR$/bert/multi_cased_L-12_H-768_A-12/vocab.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jupyterNotebook/bert/vocab.txt" beforeDir="false" afterPath="$PROJECT_DIR$/bert/vocab.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jupyterNotebook/usingKorQuAD.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jupyterNotebook/usingKorQuAD.py" beforeDir="false" afterPath="$PROJECT_DIR$/usingKorQuAD.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jupyterNotebook/문서 검색.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/문서 검색.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qna/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/qna/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/qna/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/qna/templates/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/qna/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/qna/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usingKorQuAD.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/usingKorQuAD.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usingKorQuAD.py" beforeDir="false" afterPath="$PROJECT_DIR$/usingKorQuAD.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
