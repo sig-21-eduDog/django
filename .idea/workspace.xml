@@ -21,7 +21,11 @@
   <component name="ChangeListManager">
     <list default="true" id="fa985d6f-ed84-4caa-9823-a48c24bf6835" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qna/algorithm/documents.py" beforeDir="false" afterPath="$PROJECT_DIR$/qna/algorithm/documents.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qna/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/qna/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qna/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/qna/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qna/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/qna/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usingKorQuAD.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/usingKorQuAD.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usingKorQuAD.py" beforeDir="false" afterPath="$PROJECT_DIR$/usingKorQuAD.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,6 +60,10 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\magic\my_project\django\qna" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\pgm\Python\RLyoJulGae" />
+      <recent name="C:\pgm\Python\RLyoJulGae\jupyterNotebook" />
     </key>
   </component>
   <component name="RunManager" selected="Python.asdfasdf">

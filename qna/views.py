@@ -5,6 +5,7 @@ from .forms import QuestionForm
 from .models import Data
 from qna.algorithm.subjects import getSubject
 from qna.algorithm.documents import search
+import usingKorQuAD
 
 
 def index(request):
@@ -29,11 +30,11 @@ def index(request):
                     # 여러 개의 본문이 나오면 가장 적합한 본문 하나 선택
                     content = get_object_or_404(Data, main=search(getSubject(topic)))
 
-
             # Render the HTML template index.html with the data in the context variable
             context = {
                 'content': content,
                 'form': question_form,
+                'answer': usingKorQuAD.predict_letter(topic, search(getSubject(topic))),
             }
 
             return render(request, 'index.html', context=context)
