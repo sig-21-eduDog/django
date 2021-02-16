@@ -57,7 +57,14 @@ TEXT = "text"
 # - BERT의 토큰화는 단어를 분리하는 토큰화 방식입니다. wordpiece(단어조각?) 방식이라고 하는데, 이는 한국어를 형태소로 꼭 변환해야 할 문제를 해결해주며, 의미가 있는 단어는 밀접하게 연관이 되게 하는 장점까지 갖추고 있습니다.
 # - 단어의 첫 시작은 ##가 붙지 않지만, 단어에 포함되면서 단어의 시작이 아닌 부분에는 ##가 붙는 것이 특징입니다.  
 # - 네이버 감성분석에서 했던 것처럼, 한국어 감성분석에서는 새로 토크나이저 클래스를 상속을 받아서, 토크나이저를 재정의 해주어야 합니다.(그렇지 않으면 완전자모분리 현상 발생)
-
+token_dict = {}
+with codecs.open(vocab_path, 'r', 'utf8') as reader:
+    for line in reader:
+        token = line.strip()
+        if "_" in token:
+          token = token.replace("_","")
+          token = "##" + token
+        token_dict[token] = len(token_dict)
 # + id="pxI9s2TeAYuz"
 class inherit_Tokenizer(Tokenizer):
   def _tokenize(self, text):
