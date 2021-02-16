@@ -3,7 +3,7 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import get_object_or_404
 from .forms import QuestionForm
 from .models import Data
-from qna.algorithm.subjects import getSubject
+#from qna.algorithm.subjects import getSubject
 from qna.algorithm.documents import search
 import usingKorQuAD
 
@@ -25,16 +25,16 @@ def index(request):
             except:
                 try:
                     # Data 테이블에 topic이 없을 때
-                    content = get_object_or_404(Data, title=getSubject(topic))
+                    content = get_object_or_404(Data, main=search(topic))
                 except Data.MultipleObjectsReturned:
                     # 여러 개의 본문이 나오면 가장 적합한 본문 하나 선택
-                    content = get_object_or_404(Data, main=search(getSubject(topic)))
+                    content = get_object_or_404(Data, main=search(topic))
 
             # Render the HTML template index.html with the data in the context variable
             context = {
                 'content': content,
                 'form': question_form,
-                'answer': usingKorQuAD.predict_letter(topic, search(getSubject(topic))),
+                'answer': usingKorQuAD.predict_letter(topic, content.getMain()),
             }
 
             return render(request, 'index.html', context=context)

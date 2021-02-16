@@ -1,0 +1,7 @@
+C:\pgm\Python\RLyoJulGae
+1. multi_cased_L-12_H-768_A-12.zip
+2. korquad_wordpiece_3.h5
+C:\pgm\Python\RLyoJulGae\bert2
+3. bert_model.ckpt.data-00000-of-00001
+C:\pgm\Python\RLyoJulGae\multi_cased_~
+4. bert_model.ckpt.data-00000-of-00001
