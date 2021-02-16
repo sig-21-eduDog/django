@@ -3,7 +3,7 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import get_object_or_404
 from .forms import QuestionForm
 from .models import Data
-#from qna.algorithm.subjects import getSubject
+
 from qna.algorithm.documents import search
 import usingKorQuAD
 

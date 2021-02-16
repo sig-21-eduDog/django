@@ -16,12 +16,14 @@ from eunjeon import Mecab  # KoNLz style mecab wrapper
 
 # 형태소 분석기 로드
 def getTagger():
-    return Mecab()
+    return Mecab(dicpath='C:/mecab/mecab-ko-dic')
+
 
 # 형태소 분석기를 이용하여 문장 토큰화
 def tokenize(sent):
     tagger = getTagger()
     return tagger.morphs(sent)
+
 
 # db에서 본문만 들고오기
 def selectMainFromData():
@@ -36,6 +38,7 @@ def selectMainFromData():
     conn.close()
     return data
 
+
 def getTopicContent(docs):
     topicPlusContent = []
     contents = []
@@ -45,9 +48,11 @@ def getTopicContent(docs):
 
     return topicPlusContent, contents
 
+
 def getNouns(query):
     tagger = getTagger()
     return tagger.nouns(query)
+
 
 def getTokenizedCorpus(docs):
     res = []
@@ -56,12 +61,13 @@ def getTokenizedCorpus(docs):
 
     return res
 
+
 # 문서 검색 알고리즘
 def search(query):
     topicPlusContent, contents = getTopicContent(selectMainFromData())
     tokenized_corpus = getTokenizedCorpus(topicPlusContent)
     tokenized_query = getNouns(query)
-
+    print(tokenized_query)
     bm25 = BM25Okapi(tokenized_corpus)
 
     return bm25.get_top_n(tokenized_query, contents, n=1)[0]
