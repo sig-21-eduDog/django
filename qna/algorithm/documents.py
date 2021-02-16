@@ -9,6 +9,7 @@ import numpy as np
 from rank_bm25 import BM25Okapi
 from tqdm import tqdm
 import pandas as pd
+import pymysql
 from rank_bm25 import BM25Okapi
 from eunjeon import Mecab  # KoNLz style mecab wrapper
 
@@ -37,10 +38,12 @@ def selectMainFromData():
 
 def getTopicContent(docs):
     topicPlusContent = []
+    contents = []
     for doc in docs:
         topicPlusContent.append(list(doc)[0] + ' ' + list(doc)[1])
+        contents.append(list(doc)[1])
 
-    return topicPlusContent
+    return topicPlusContent, contents
 
 def getNouns(query):
     tagger = getTagger()
@@ -55,10 +58,10 @@ def getTokenizedCorpus(docs):
 
 # 문서 검색 알고리즘
 def search(query):
-    topicPlusContent = getTopicContent(selectMainFromData())
+    topicPlusContent, contents = getTopicContent(selectMainFromData())
     tokenized_corpus = getTokenizedCorpus(topicPlusContent)
     tokenized_query = getNouns(query)
 
     bm25 = BM25Okapi(tokenized_corpus)
 
-    return bm25.get_top_n(tokenized_query, topicPlusContent, n=1)[0]
+    return bm25.get_top_n(tokenized_query, contents, n=1)[0]
